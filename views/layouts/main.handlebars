@@ -11,12 +11,12 @@
   <body>
     <header class="hdr">
       <nav class="nav-links">
-        <h1><a href="#">Home</a></h1>
-        <h1><a href="#">Dashboard</a></h1>
+        <h2><a href="#">Home</a></h2>
+        <h2><a href="#">Dashboard</a></h2>
         {{#if logged_in}}
-          <h1><button class="btn" id="logout">Logout</button></h1>
+          <h2><button class="btn" type="button" id="logout-btn">Logout</button></h2>
         {{else}}
-          <h1><button class="btn" id="login">Login</button></h1>
+          <h2><button class="btn" type="button" id="login-btn">Login</button></h2>
         {{/if}}
       </nav>
       <div class="hdr-title">
@@ -24,7 +24,7 @@
       </div>
     </header>
 
-    <main class="">
+    <main class="container">
       {{{body}}}
     </main>
 
