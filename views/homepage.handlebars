@@ -1,10 +1,18 @@
 {{#each posts as |post|}}
-<section class="post-box">
-  <header class="post-header">
-    <h3 class="post-box-title">{{post.title}}</h3>
-    <span class="post-by-info">Posted by {{#if post.author}}{{post.author}}{{else}}Unknown{{/if}} on {{#if post.date_created}}{{post.date_created}}{{else}}some day that happened that one time{{/if}}</span>
-  </header>
+  <section class="post-box">
+    <header class="post-header">
+      <h3 class="post-box-title">{{post.title}}</h3>
+      <span class="post-by-info">Posted by
+        {{#if post.author}}{{post.author}}
+        {{else}}Unknown
+        {{/if}}
+        on
+        {{#if post.date_created}}{{post.date_created}}
+        {{else}}some day that happened that one time
+        {{/if}}
+      </span>
+    </header>
 
-  <p class="post-box-paragraph">{{post.content}}</p>
-</section>
+    <p class="post-box-paragraph">{{post.content}}</p>
+  </section>
 {{/each}}
