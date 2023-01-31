@@ -1,0 +1,14 @@
+[
+    {
+        "author": "Taylor Turner",
+        "title": "This is a test",
+        "content": "This is entire post. Or at least that is what this is meant for. But who knows if this all will actually work. Let's hope so!",
+        "date_created": "1/30/2023"
+    },
+    {
+        "author": "Bobby Mills",
+        "title": "Another test here",
+        "content": "This is entire post. Or at least that is what this is meant for. But who knows if this all will actually work. Let's hope so!",
+        "date_created": "1/28/2023"
+    }
+]
