@@ -1,5 +1,7 @@
 const { response } = require("../../Taylors-Note-Taker/db");
-const { Post } = require("../models");
+const { User, Post } = require("../models");
+const withAuth = require('../utils/auth');
+
 
 const router = require("express").Router();
 
@@ -21,6 +23,23 @@ router.get("/", async (req, res) => {
 router.get("/login", async (req, res) => {
   try {
     res.status(200).render("login");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/dashboard", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ["password"]},
+    })
+
+    const user = userData.get({ plain: true });
+
+    res.status(200).render("dashboard", {
+      user,
+      logged_in: true,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
