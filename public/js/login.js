@@ -1,30 +1,25 @@
-const registerEvent = async (event) => {
+const loginEvent = async (event) => {
   event.preventDefault();
 
-  const first_name = document
-    .getElementById("first-name-register-user")
-    .value.trim();
-  const last_name = document
-    .getElementById("last-name-register-user")
-    .value.trim();
-  const email = document.getElementById("email-register-user").value.trim();
-  const password = document
-    .getElementById("password-register-user")
-    .value.trim();
+  const email = document.getElementById("email-login").value.trim();
 
-  if (first_name && last_name && email && password) {
-    const response = await fetch("/api/users/register", {
+  const password = document.getElementById("password-login").value.trim();
+
+  if (email && password) {
+    const response = await fetch("api/users/login", {
       method: "POST",
-      body: JSON.stringify({ first_name, last_name, email, password }),
+      body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.href = '/'
+      document.location.replace("/dashboard");
+    } else {
+      alert(response.statusText);
     }
   }
 };
 
-document
-  .getElementById("register-user-btn")
-  .addEventListener("click", registerEvent);
+
+
+document.getElementById("login-btn").addEventListener("click", loginEvent);
