@@ -11,12 +11,12 @@
   <body>
     <header class="hdr">
       <nav class="nav-links">
-        <h2><a href="#">Home</a></h2>
-        <h2><a href="#">Dashboard</a></h2>
+        <h2><a href="/">Home</a></h2>
+        <h2><a href="/dashboard">Dashboard</a></h2>
         {{#if logged_in}}
-          <h2><button class="btn" type="button" id="logout-btn">Logout</button></h2>
+          <h2><button class="btn-no-style" type="button" id="logout-btn">Logout</button></h2>
         {{else}}
-          <h2><button class="btn" type="button" id="login-btn">Login</button></h2>
+          <h2><a href="/login">Login</a></h2>
         {{/if}}
       </nav>
       <div class="hdr-title">
@@ -24,15 +24,15 @@
       </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-container" >
       {{{body}}}
     </main>
 
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
-    {{else}}
-      <script src="/js/login.js"></script>
     {{/if}}
+
+    <script src="/js/singlePost.js"></script>
   </body>
 
 </html>
