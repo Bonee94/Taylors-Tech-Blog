@@ -1,0 +1,36 @@
+<section class="post-box">
+  <header class="post-header">
+    <h3 class="post-box-title">{{post.title}}</h3>
+    <span class="post-by-info">Posted by
+      {{#if post.author}}{{post.author}}
+      {{else}}Unknown
+      {{/if}}
+      on
+      {{#if post.date_created}}{{post.date_created}}
+      {{else}}some day that happened that one time
+      {{/if}}
+    </span>
+  </header>
+
+  <p class="post-box-paragraph">{{post.content}}</p>
+</section>
+
+
+  <section class="post-box">
+    <header class="post-header">
+      <h3 class="post-box-title">Leave a comment</h3>
+    </header>
+    <div class="comment-container">
+      <span>Comment:</span>
+      <textarea class="post-comment-text" 
+      {{#if logged_in}}
+      {{else}} placeholder="Sign in/Register to leave a comment" disabled
+      {{/if}}></textarea>
+
+      {{#if logged_in}} <button class="form-button" id="comment-box-btn">Leave Comment</button>
+      {{else}} <a class="form-button" href="/login"><center>Sign in/Register</center></a>
+      {{/if}}
+     
+    </div>
+  </section>
+
