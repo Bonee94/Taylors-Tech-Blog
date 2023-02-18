@@ -23,3 +23,9 @@ const loginEvent = async (event) => {
 
 
 document.getElementById("login-btn").addEventListener("click", loginEvent);
+document.getElementById("password-login").addEventListener('keyup', (event) => {
+  event.preventDefault();
+  if (event.key === 'Enter') {
+    document.getElementById("login-btn").click();
+  }
+})
