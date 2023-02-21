@@ -1,0 +1,14 @@
+{{#each post.comments as |comment|}}
+  <section class="post-box">
+    <header class="post-header">
+      <h3 class="post-box-title"></h3>
+      <span class="post-by-info">Posted: {{comment.date_created}}</span>
+    </header>
+
+    <p class="post-box-paragraph">
+        {{comment.content}}
+        <br>
+        - {{comment.author}}
+    </p>
+  </section>
+{{/each}}
