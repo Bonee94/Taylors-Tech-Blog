@@ -22,7 +22,7 @@
     </header>
     <div class="comment-container">
       <span>Comment:</span>
-      <textarea class="post-comment-text" 
+      <textarea class="post-comment-text" id="new-comment"
       {{#if logged_in}}
       {{else}} placeholder="Sign in/Register to leave a comment" disabled
       {{/if}}></textarea>
@@ -30,7 +30,12 @@
       {{#if logged_in}} <button class="form-button" id="comment-box-btn">Leave Comment</button>
       {{else}} <a class="form-button" href="/login"><center>Sign in/Register</center></a>
       {{/if}}
-     
+
+      
     </div>
   </section>
+
+  {{> commentPartial }}
+
+  <script src="/js/saveComment.js"></script>
 
