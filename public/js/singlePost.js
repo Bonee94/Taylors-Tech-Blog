@@ -3,6 +3,6 @@ document.querySelectorAll(".post-select-btn").forEach((btn) => {
   const postId = btn.getAttribute("name");
 
   btn.addEventListener("click", () => {
-    document.location = `/post/${postId}`
+    document.location = `/post/${postId}`;
   });
 });
