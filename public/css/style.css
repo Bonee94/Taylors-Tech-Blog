@@ -116,6 +116,7 @@ a {
 }
 
 .btn-no-style-post {
+  width: 100%;
   background: none;
   color: inherit;
   border: none;
@@ -127,16 +128,17 @@ a {
   text-align: start;
 }
 
-.center-comment-box { 
+.comment-container { 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   margin: 20px;
 }
 
 .post-comment-text {
+  margin: auto;
   resize: none;
   height: 20vh;
-  width: 50vw;
+  width: 100%;
   border: 3px solid rgb(164, 164, 224);
 }
 
