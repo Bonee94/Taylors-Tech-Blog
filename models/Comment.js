@@ -11,12 +11,16 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    author: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     date_created: {
-        type: DataTypes.STRING,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
   },
