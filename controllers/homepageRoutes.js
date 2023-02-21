@@ -1,5 +1,6 @@
-const { User, Post } = require("../models");
+const { Comment, User, Post } = require("../models");
 const withAuth = require('../utils/auth');
+const dateFormatter = require("../utils/dateFormat");
 
 
 const router = require("express").Router();
@@ -54,9 +55,19 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id,
+      {include: [{ model: Comment, as: 'comments'}]}
+      );
 
-    const post = await postData.get({ plain: true});
+    const post = await postData.get({ plain: true });
+
+    //sort comments into descending order (newest first)
+    post.comments.reverse();   
+
+    //format milliseconds to locale date and time
+    for (const comment of post.comments) {
+      comment.date_created = dateFormatter(comment.date_created);
+    };
 
     req.session.save(() => {
       req.session.viewing_post_id = req.params.id;
