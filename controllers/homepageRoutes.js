@@ -83,6 +83,38 @@ router.get("/dashboard/new-post", withAuth, async (req, res) => {
   }
 });
 
+//route to render single post for updating a users post
+router.get("/dashboard/post/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [{ model: Comment, as: "comments" }],
+    });
+
+    const post = await postData.get({ plain: true });
+
+    //sort comments into descending order (newest first)
+    post.comments.reverse();
+
+    //format milliseconds to locale date and time
+    post.date_created = dateFormatter(post.date_created);
+
+    for (const comment of post.comments) {
+      comment.date_created = dateFormatter(comment.date_created);
+    }
+
+    req.session.save(() => {
+      req.session.viewing_post_id = req.params.id;
+    });
+
+    res.status(200).render("dashboardSinglePost", {
+      post,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+});
+
 //brings up commenting page for a single post
 router.get("/post/:id", async (req, res) => {
   try {
