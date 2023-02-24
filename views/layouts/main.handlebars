@@ -6,6 +6,7 @@
     <title>Taylor's Tech Blog</title>
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/6c0f2d0160.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -20,7 +21,7 @@
         {{/if}}
       </nav>
       <div class="hdr-title">
-        <h1>The Tech Blog</h1>
+        <h1>{{#if pageTitle}}{{pageTitle}}{{else}}The Tech Blog{{/if}}</h1>
       </div>
     </header>
 
