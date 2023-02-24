@@ -24,7 +24,7 @@ Post.init(
       allowNull: false,
     },
     date_created: {
-        type: DataTypes.STRING,
+        type: DataTypes.BIGINT,
         allowNull: false,
     },
   },
