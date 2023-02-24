@@ -1,0 +1,18 @@
+ <section class="post-box">
+    <header class="post-header">
+      <h3 class="new-post-title">{{post.title}} (edit post)</h3>
+    </header>
+    <div class="comment-container">
+      <span>Title:</span>
+      <input class="new-title-text" id="update-post-title"></input>
+      <span>Content:</span>
+      <textarea class="post-comment-text" id="update-post-content"></textarea>
+      <button class="new-post-button" id="update-post-button">Update</button>
+      <button class="new-post-button" id="delete-post-button">Delete</button>
+    </div>
+  </section>
+
+  {{> commentPartial }}
+
+
+<script src="/js/updatePost.js"></script>
