@@ -22,4 +22,25 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+
+//updates post in db
+router.put("/", async (req, res) => {
+  try {
+
+    const post = {
+        title: req.body.title,
+        content: req.body.content,
+    }
+
+    await Post.update(post, {
+      where: {id: req.session.viewing_post_id}
+    });
+
+    res.status(200).json('Post Updated')
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports = router;
