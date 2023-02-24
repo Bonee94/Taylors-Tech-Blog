@@ -1,0 +1,18 @@
+<div class="dashboard-hdr">
+    <h2>Hello, {{user.first_name}} <span><small>({{user.username}})</small></span></h2>
+
+    <a href="/dashboard/new-post" class="form-button" id="new-post-anchor">
+    <i class="fa fa-plus"></i> New Post</a>
+</div>
+
+
+{{#if user.posts}}
+{{> userPostsPartial}}
+
+<script src="/js/userSinglePost.js"></script>
+{{else}}
+<br><br>
+<center><h4>No posts to display</h4></center>
+<br><br>
+{{/if}}
+
