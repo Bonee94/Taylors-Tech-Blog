@@ -22,7 +22,20 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.session.viewing_post_id)
 
+    const post = await postData.get({ plain: true });
+
+    console.log(post)
+
+    res.status(200).json(post)
+  } catch (error) {
+    res.status(400).json(error);
+
+  }
+});
 
 //updates post in db
 router.put("/", async (req, res) => {
