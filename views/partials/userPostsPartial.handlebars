@@ -1,0 +1,16 @@
+{{#each user.posts as |post|}}
+  <section class="post-box">
+    <button class="btn-no-style-post post-select-btn" name="{{post.id}}">
+    <header class="post-header">
+      <h3 class="post-box-title">{{post.title}}</h3>
+      <span class="post-by-info">Posted: {{post.date_created}}</span>
+    </header>
+
+    <p class="post-box-paragraph">
+        {{post.content}}
+        <br>
+        - {{post.author}}
+    </p>
+    </button>
+  </section>
+{{/each}}
