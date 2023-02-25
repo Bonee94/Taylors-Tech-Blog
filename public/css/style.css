@@ -313,3 +313,52 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links {
+    width: 90%;
+  }
+
+  .hdr-title {
+    width: 70%;
+  }
+
+  .modal-content {
+    width: 70%;
+    height: 13%;
+    top: 30vh;
+  }
+
+  @keyframes animatetop {
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 30vh;
+      opacity: 1;
+    }
+  }
+}
