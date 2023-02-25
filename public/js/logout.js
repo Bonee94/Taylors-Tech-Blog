@@ -5,6 +5,7 @@ const logoutEvent = async () => {
   });
 
   if (response.ok) {
+    localStorage.removeItem('loggedInCheck')
     document.location.replace('/');
   } else {
     alert(response.statusText);
