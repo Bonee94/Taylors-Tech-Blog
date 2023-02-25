@@ -362,3 +362,46 @@ a {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links {
+    width: 90%;
+  }
+
+  .hdr-title {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .post-by-info {
+    font-size: 8px;
+    padding: 0 12px 0 0;
+  }
+
+  #new-post-anchor {
+    font-size: 0.7em;
+    width: 13vw;
+  }
+}
