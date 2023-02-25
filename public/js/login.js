@@ -13,6 +13,9 @@ const loginEvent = async (event) => {
     });
 
     if (response.ok) {
+      //sets a local item to be checked by index.js to start timers only when signed in to watch activity and log out after 75 seconds of no activity
+      localStorage.setItem('loggedInCheck', true)
+
       document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
