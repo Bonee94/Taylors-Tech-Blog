@@ -24,10 +24,11 @@ const updatePost = async () => {
       });
   
       if (response.ok) {
+        modalDisplay('updatedPost')
+
         setTimeout(() => {
-          // TODO: Post updated modal 
           document.location.href = '/dashboard'
-        }, 1000);
+        }, 1500);
       }
     }
 };
@@ -40,10 +41,11 @@ const deletePost = async () => {
   });
 
   if (response.ok) {
+    modalDisplay('deletedPost');
+
     setTimeout(() => {
-      // TODO: Post deleted modal 
       document.location.href = '/dashboard'
-    }, 1000);
+    }, 1500);
   }
 };
 
