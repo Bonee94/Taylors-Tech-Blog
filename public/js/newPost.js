@@ -12,10 +12,10 @@ const createNewPost = async () => {
     });
 
     if (response.ok) {
+      modalDisplay("new post")
       setTimeout(() => {
-        // TODO: Post Created modal 
         document.location.href = '/dashboard'
-      }, 1000);
+      }, 2000);
     }
   }
 };
