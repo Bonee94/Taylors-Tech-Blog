@@ -12,7 +12,10 @@
     </div>
   </section>
 
+  {{#if post.comments}}
+  <center><h3>Comments:</h3></center>
   {{> commentPartial }}
+  {{/if}}
 
 
 <script src="/js/updateDeletePost.js"></script>
