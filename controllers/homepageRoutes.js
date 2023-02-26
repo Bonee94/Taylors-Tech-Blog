@@ -50,6 +50,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    console.log(user);
+
     const pageTitle = "Your Dashboard";
 
     //format milliseconds to locale date and time
@@ -59,6 +61,8 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     user.posts.reverse();
 
+    console.log(user);
+    
     res.status(200).render("dashboard", {
       user,
       pageTitle,
