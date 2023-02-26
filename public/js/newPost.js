@@ -4,7 +4,6 @@ const createNewPost = async () => {
   const title = document.getElementById("new-post-title").value;
   const content = document.getElementById("new-post-content").value;
   const date = dateFormatter(Date.now());
-  console.log(date)
 
   if (title && content) {
     const response = await fetch("/api/posts/", {

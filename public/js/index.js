@@ -74,10 +74,12 @@ const modalDisplay = (reason) => {
   });
 };
 
+//checks the local storage for the check and if true starts timers
 if (loggedInCheck == "true") {
   setupTimers();
 }
 
+//idle logout sets a local storage check to render the idle logout modal
 if (idleLogout == "true") {
   setTimeout(() => {
     modalDisplay("idleLogout");
@@ -86,6 +88,7 @@ if (idleLogout == "true") {
   localStorage.removeItem("idleLogout");
 }
 
+//date formatting on client side to save local time 
 const dateFormatter = (milliseconds) => {
   const date = new Date(milliseconds).toLocaleString();
 
