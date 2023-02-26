@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       author: user.username,
       title: req.body.title,
       content: req.body.content,
-      date_created: Date.now(),
+      date_created: req.body.date,
       user_id: req.session.user_id,
     };
 

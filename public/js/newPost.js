@@ -3,11 +3,13 @@ const createNewPost = async () => {
   //saves comment to post
   const title = document.getElementById("new-post-title").value;
   const content = document.getElementById("new-post-content").value;
+  const date = dateFormatter(Date.now());
+  console.log(date)
 
   if (title && content) {
     const response = await fetch("/api/posts/", {
       method: "POST",
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ title, content, date }),
       headers: { "Content-Type": "application/json" },
     });
 
