@@ -58,6 +58,9 @@ const modalDisplay = (reason) => {
     case "updatedPost":
       modalText.innerHTML = "Post was updated!";
       break;
+    case "newComment":
+      modalText.innerHTML = "Comment saved!";
+      break;
   }
 
   close.addEventListener("click", () => {
