@@ -7,8 +7,9 @@ const getPost = async () => {
 
   const response = await responseData.json();
 
-  document.getElementById("update-post-title").value = response.title;
-  document.getElementById("update-post-content").value = response.content;
+  console.log(response)
+  document.getElementById("update-post-title").value = await response.title;
+  document.getElementById("update-post-content").value = await response.content;
 };
 
 //updates post content
