@@ -62,7 +62,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     user.posts.reverse();
 
     console.log(user);
-    
+
     res.status(200).render("dashboard", {
       user,
       pageTitle,
@@ -107,7 +107,7 @@ router.get("/dashboard/post/:id", withAuth, async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.viewing_post_id = req.params.id;
+      viewing_post_id = req.params.id;
     });
 
     res.status(200).render("dashboardSinglePost", {
@@ -139,7 +139,7 @@ router.get("/post/:id", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.viewing_post_id = req.params.id;
+      viewing_post_id = req.params.id;
     });
 
     res.status(200).render("singlePost", {
