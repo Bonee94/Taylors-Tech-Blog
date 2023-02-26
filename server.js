@@ -22,8 +22,8 @@ const sess = {
     //max age set to 2 hrs
     maxAge: 2 * 60 * 60 * 1000
   },
-  resave: true,
-  saveUninitialized: false,
+  resave: false,
+  saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
   })
