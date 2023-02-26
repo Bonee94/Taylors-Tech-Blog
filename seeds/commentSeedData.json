@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "author": "This_is_Sarah22",
         "content": "22 is my favorite number!",
         "date_created": 1664419425700,
@@ -7,6 +8,7 @@
         "post_id": 3
     },
     {
+        "id": 2,
         "author": "Schotts88",
         "content": "I'm such a cool guy",
         "date_created": 1664419425000,
@@ -14,6 +16,7 @@
         "post_id": 2
     },
     {
+        "id": 3,
         "author": "bunny",
         "content": "“Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.” -Buddha",
         "date_created": 1669215165790,
@@ -21,12 +24,14 @@
         "post_id": 4
     },
     {
+        "id": 4,
         "author": "bunny",
         "content": " “Life is really simple, but we insist on making it complicated.” -Confucius",
         "date_created": 1669215165000,
         "post_id": 2
     },
     {
+        "id": 5,
         "author": "BobbyGuy",
         "content": "“The whole secret lies in confusing the enemy, so that he cannot fathom our real intent.” - Art of War",
         "date_created": 1670705025201,
@@ -34,6 +39,7 @@
         "post_id": 3
     },
     {
+        "id": 6,
         "author": "BobbyGuy",
         "content": "“A bird doesn't sing because it has an answer, it sings because it has a song.” -Maya Angelou",
         "date_created": 1671317565402,
@@ -41,6 +47,7 @@
         "post_id": 4
     },
     {
+        "id": 7,
         "author": "This_is_Sarah22",
         "content": "I'm really pretty",
         "date_created": 1674928365921,
@@ -48,6 +55,7 @@
         "post_id": 2
     },
     {
+        "id": 8,
         "author": "Schotts88",
         "content": "This is the best idea ever",
         "date_created": 1676562765307,
@@ -55,6 +63,7 @@
         "post_id": 1
     },
     {
+        "id": 9,
         "author": "Schotts88",
         "content": "hey, anyone see this comment?",
         "date_created": 1676760765708,
