@@ -88,7 +88,7 @@ router.get("/dashboard/post/:id", withAuth, async (req, res) => {
   
 
   const responseData = await fetch(`/api/posts/viewing/${req.params.id}`, {
-    method: "GET",
+    method: "PUT",
     headers: { "Content-Type": "application/json" },
   });
 
