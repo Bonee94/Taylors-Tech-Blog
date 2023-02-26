@@ -1,14 +1,30 @@
 [
     {
-        "author": "Taylor Turner",
-        "title": "This is a test",
-        "content": "This is entire post. Or at least that is what this is meant for. But who knows if this all will actually work. Let's hope so!",
-        "date_created": "1/30/2023"
+        "author": "bunny",
+        "title": "This will hopefully get 100!",
+        "content": "This is application does have a timeout once logged in. After 60 seconds you will get a warning. And then 15 seconds after that it will log you out. Or at least that is what it should do. Lol. But who knows if this all will actually work. Let's hope so! Peace and blessings!",
+        "date_created": "1677191205",
+        "user_id": 1
     },
     {
-        "author": "Bobby Mills",
+        "author": "BobbyGuy",
         "title": "Another test here",
-        "content": "This is entire post. Or at least that is what this is meant for. But who knows if this all will actually work. Let's hope so!",
-        "date_created": "1/28/2023"
+        "content": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "date_created": "1677191205509",
+        "user_id": 2
+    },
+    {
+        "author": "Schotts88",
+        "title": "Another test here",
+        "content": "Cursus turpis massa tincidunt dui ut. Interdum velit euismod in pellentesque. Id diam vel quam elementum pulvinar etiam non quam. Sagittis aliquam malesuada bibendum arcu vitae. Pharetra vel turpis nunc eget. ",
+        "date_created": "1677191205509",
+        "user_id": 3
+    },
+    {
+        "author": "This_is_Sarah",
+        "title": "Another Post",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+        "date_created": "1677191205509",
+        "user_id": 4
     }
 ]
