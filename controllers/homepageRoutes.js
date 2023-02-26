@@ -50,8 +50,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    console.log(user);
-
     const pageTitle = "Your Dashboard";
 
     //format milliseconds to locale date and time
@@ -60,8 +58,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
     }
 
     user.posts.reverse();
-
-    console.log(user);
 
     res.status(200).render("dashboard", {
       user,
@@ -107,7 +103,7 @@ router.get("/dashboard/post/:id", withAuth, async (req, res) => {
     }
 
     req.session.save(() => {
-      viewing_post_id = req.params.id;
+      req.session.viewing_post_id = req.params.id;
     });
 
     res.status(200).render("dashboardSinglePost", {
@@ -139,7 +135,7 @@ router.get("/post/:id", async (req, res) => {
     }
 
     req.session.save(() => {
-      viewing_post_id = req.params.id;
+      req.session.viewing_post_id = req.params.id;
     });
 
     res.status(200).render("singlePost", {
