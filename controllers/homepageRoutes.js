@@ -1,6 +1,5 @@
 const { Comment, User, Post } = require("../models");
 const withAuth = require("../utils/auth");
-const dateFormatter = require("../utils/dateFormat");
 
 const router = require("express").Router();
 
@@ -10,10 +9,7 @@ router.get("/", async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    //format milliseconds to locale date and time
-    for (const post of posts) {
-      post.date_created = dateFormatter(post.date_created);
-    }
+    posts.reverse();
 
     res.status(200).render("homepage", {
       posts,
@@ -51,11 +47,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     const pageTitle = "Your Dashboard";
-
-    //format milliseconds to locale date and time
-    for (const post of user.posts) {
-      post.date_created = dateFormatter(post.date_created);
-    }
 
     user.posts.reverse();
 
@@ -95,20 +86,13 @@ router.get("/dashboard/post/:id", withAuth, async (req, res) => {
     //sort comments into descending order (newest first)
     post.comments.reverse();
 
-    //format milliseconds to locale date and time
-    post.date_created = dateFormatter(post.date_created);
-
-    for (const comment of post.comments) {
-      comment.date_created = dateFormatter(comment.date_created);
-    }
-
     req.session.save(() => {
       req.session.viewing_post_id = req.params.id;
-    });
 
-    res.status(200).render("dashboardSinglePost", {
-      post,
-      logged_in: true,
+      res.status(200).render("dashboardSinglePost", {
+        post,
+        logged_in: true,
+      });
     });
   } catch (err) {
     res.status(500).json({ error: err });
@@ -127,20 +111,13 @@ router.get("/post/:id", async (req, res) => {
     //sort comments into descending order (newest first)
     post.comments.reverse();
 
-    //format milliseconds to locale date and time
-    post.date_created = dateFormatter(post.date_created);
-
-    for (const comment of post.comments) {
-      comment.date_created = dateFormatter(comment.date_created);
-    }
-
     req.session.save(() => {
       req.session.viewing_post_id = req.params.id;
-    });
 
-    res.status(200).render("singlePost", {
-      post,
-      logged_in: req.session.logged_in,
+      res.status(200).render("singlePost", {
+        post,
+        logged_in: req.session.logged_in,
+      });
     });
   } catch (err) {
     res.status(500).json({ error: err });

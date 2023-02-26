@@ -1,64 +1,73 @@
 [
     {
+        "id": 1,
         "author": "This_is_Sarah22",
         "content": "22 is my favorite number!",
-        "date_created": 1664419425700,
+        "date_created": "8/26/2022, 7:16 pm",
         "user_id": 4,
         "post_id": 3
     },
     {
+        "id": 2,
         "author": "Schotts88",
         "content": "I'm such a cool guy",
-        "date_created": 1664419425000,
+        "date_created": "9/17/2022, 10:31 pm",
         "user_id": 3,
         "post_id": 2
     },
     {
+        "id": 3,
         "author": "bunny",
         "content": "“Thousands of candles can be lighted from a single candle, and the life of the candle will not be shortened. Happiness never decreases by being shared.” -Buddha",
-        "date_created": 1669215165790,
+        "date_created": "9/18/2022, 4:22 am",
         "user_id": 1,
-        "post_id": 4
+        "post_id": 3
     },
     {
+        "id": 4,
         "author": "bunny",
         "content": " “Life is really simple, but we insist on making it complicated.” -Confucius",
-        "date_created": 1669215165000,
+        "date_created": "10/22/2022, 2:22 pm",
         "post_id": 2
     },
     {
+        "id": 5,
         "author": "BobbyGuy",
         "content": "“The whole secret lies in confusing the enemy, so that he cannot fathom our real intent.” - Art of War",
-        "date_created": 1670705025201,
+        "date_created": "10/26/2022, 7:32 am",
         "user_id": 2,
         "post_id": 3
     },
     {
+        "id": 6,
         "author": "BobbyGuy",
         "content": "“A bird doesn't sing because it has an answer, it sings because it has a song.” -Maya Angelou",
-        "date_created": 1671317565402,
+        "date_created": "1/29/2023, 11:58 am",
         "user_id": 2,
-        "post_id": 4
+        "post_id": 1
     },
     {
+        "id": 7,
         "author": "This_is_Sarah22",
         "content": "I'm really pretty",
-        "date_created": 1674928365921,
+        "date_created": "1/30/2023, 9:46 pm",
         "user_id": 4,
         "post_id": 2
     },
     {
+        "id": 8,
         "author": "Schotts88",
         "content": "This is the best idea ever",
-        "date_created": 1676562765307,
+        "date_created": "2/24/2023, 1:46 am",
         "user_id": 3,
-        "post_id": 1
+        "post_id": 4
     },
     {
+        "id": 9,
         "author": "Schotts88",
         "content": "hey, anyone see this comment?",
-        "date_created": 1676760765708,
+        "date_created": "2/25/2023, 4:06 pm",
         "user_id": 3,
-        "post_id": 1
+        "post_id": 4
     }    
 ]

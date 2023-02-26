@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
     const comment = {
         author: user.username,
         content: req.body.comment,
-        date_created: Date.now(),
+        date_created: req.body.date,
         user_id: req.session.user_id,
         post_id: req.session.viewing_post_id
     };

@@ -13,6 +13,14 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  // postData.forEach(async post => {
+  //   await Post.create(post);
+  // })
+
+  // commentData.forEach(async comment => {
+  //   await Comment.create(comment);
+  // })
+
   await Post.bulkCreate(postData);
   
   await Comment.bulkCreate(commentData);

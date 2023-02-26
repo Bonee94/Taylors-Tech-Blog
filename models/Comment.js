@@ -20,7 +20,7 @@ Comment.init(
       allowNull: false,
     },
     date_created: {
-        type: DataTypes.BIGINT,
+        type: DataTypes.STRING,
         allowNull: false,
     },
   },

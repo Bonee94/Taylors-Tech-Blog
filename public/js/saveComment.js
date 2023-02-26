@@ -1,11 +1,12 @@
 //saves comment to post
 const saveComment = async () => {
     const comment = document.getElementById("new-comment").value;
-
+    const date = dateFormatter(Date.now());
+    
     if (comment) {
       const response = await fetch("/api/comments/", {
         method: "POST",
-        body: JSON.stringify({comment}),
+        body: JSON.stringify({comment, date}),
         headers: { "Content-Type": "application/json" },
       });
   

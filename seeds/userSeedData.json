@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "first_name": "Taylor",
         "last_name": "Turner",
         "email": "test@example.com",
@@ -7,6 +8,7 @@
         "password": "password"
     },
     {
+        "id": 2,
         "first_name": "Bobby",
         "last_name": "Mills",
         "email": "test1@example.com",
@@ -14,6 +16,7 @@
         "password": "password"
     },
     {
+        "id": 3,
         "first_name": "Dylan",
         "last_name": "Schotts",
         "email": "test2@example.com",
@@ -21,6 +24,7 @@
         "password": "password"
     },
     {
+        "id": 4,
         "first_name": "Sarah",
         "last_name": "Locks",
         "email": "test3@example.com",
