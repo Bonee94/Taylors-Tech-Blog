@@ -15,6 +15,8 @@ router.get("/", async (req, res) => {
       post.date_created = dateFormatter(post.date_created);
     }
 
+    posts.reverse();
+
     res.status(200).render("homepage", {
       posts,
       logged_in: req.session.logged_in,
