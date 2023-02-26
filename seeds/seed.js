@@ -21,9 +21,9 @@ const seedDatabase = async () => {
   //   await Comment.create(comment);
   // })
 
-  //await Post.bulkCreate(postData);
+  await Post.bulkCreate(postData);
   
-  //await Comment.bulkCreate(commentData);
+  await Comment.bulkCreate(commentData);
 
   process.exit(0);
 };
