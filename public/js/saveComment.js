@@ -10,7 +10,11 @@ const saveComment = async () => {
       });
   
       if (response.ok) {
-        document.location.reload();
+        modalDisplay('newComment');
+        
+        setTimeout(() => {
+          document.location.reload();
+        }, 1300);
       }
     }
   };
