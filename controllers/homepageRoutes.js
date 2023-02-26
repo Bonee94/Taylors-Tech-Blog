@@ -85,6 +85,10 @@ router.get("/dashboard/new-post", withAuth, async (req, res) => {
 
 //route to render single post for updating a users post
 router.get("/dashboard/post/:id", withAuth, async (req, res) => {
+  req.session.save(() => {
+    req.session.viewing_post_id = req.params.id;
+  });
+  
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [{ model: Comment, as: "comments" }],
@@ -101,10 +105,6 @@ router.get("/dashboard/post/:id", withAuth, async (req, res) => {
     for (const comment of post.comments) {
       comment.date_created = dateFormatter(comment.date_created);
     }
-
-    req.session.save(() => {
-      req.session.viewing_post_id = req.params.id;
-    });
 
     res.status(200).render("dashboardSinglePost", {
       post,
