@@ -22,11 +22,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/", async (req, res) => {
+  console.log(req.session)
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.session.viewing_post_id);
 
     const post = await postData.get({ plain: true });
+
     res.status(200).json(post);
   } catch (error) {
     res.status(400).json(error);
@@ -36,7 +38,7 @@ router.get("/:id", async (req, res) => {
 //updates post in db
 router.put("/", async (req, res) => {
   try {
-    console.log("Put route: ", req.session.viewing_post_id);
+    console.log('Put route: ', req.session.viewing_post_id)
 
     const post = {
       title: req.body.title,
@@ -55,7 +57,7 @@ router.put("/", async (req, res) => {
 
 router.delete("/", async (req, res) => {
   try {
-    console.log("Delete route: ", req.session.viewing_post_id);
+    console.log('Delete route: ', req.session.viewing_post_id)
     await Post.destroy({
       where: { id: req.session.viewing_post_id },
     });
@@ -64,6 +66,20 @@ router.delete("/", async (req, res) => {
   } catch (error) {
     res.status(400).json(error);
   }
+});
+
+router.put('/viewing/:id', (req, res) => {
+  try {
+    req.session.save(() => {
+      req.session.viewing_post_id = req.params.id;
+    });
+
+    res.status(200).json('ok')
+  } catch (error) {
+    res.status(400).json(error);
+
+  }
+
 });
 
 module.exports = router;

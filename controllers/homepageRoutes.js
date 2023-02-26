@@ -85,9 +85,11 @@ router.get("/dashboard/new-post", withAuth, async (req, res) => {
 
 //route to render single post for updating a users post
 router.get("/dashboard/post/:id", withAuth, async (req, res) => {
-  console.log(req.session)
-  req.session.save(() => {
-    req.session.viewing_post_id = req.params.id;
+  
+
+  const responseData = await fetch(`/api/posts/viewing/${req.params.id}`, {
+    method: "GET",
+    headers: { "Content-Type": "application/json" },
   });
 
   try {

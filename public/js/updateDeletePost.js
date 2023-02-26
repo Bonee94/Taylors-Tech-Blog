@@ -2,7 +2,7 @@
 const getPost = async () => {
   const url = document.location.pathname.split("/");
 
-  const responseData = await fetch(`/api/posts/${url[3]}`, {
+  const responseData = await fetch(`/api/posts/`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
