@@ -68,18 +68,4 @@ router.delete("/", async (req, res) => {
   }
 });
 
-router.put('/viewing/:id', (req, res) => {
-  try {
-    req.session.save(() => {
-      req.session.viewing_post_id = req.params.id;
-    });
-
-    res.status(200).json('ok')
-  } catch (error) {
-    res.status(400).json(error);
-
-  }
-
-});
-
 module.exports = router;

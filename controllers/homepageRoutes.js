@@ -85,13 +85,6 @@ router.get("/dashboard/new-post", withAuth, async (req, res) => {
 
 //route to render single post for updating a users post
 router.get("/dashboard/post/:id", withAuth, async (req, res) => {
-  
-
-  const responseData = await fetch(`/api/posts/viewing/${req.params.id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-  });
-
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [{ model: Comment, as: "comments" }],
@@ -109,9 +102,13 @@ router.get("/dashboard/post/:id", withAuth, async (req, res) => {
       comment.date_created = dateFormatter(comment.date_created);
     }
 
-    res.status(200).render("dashboardSinglePost", {
-      post,
-      logged_in: true,
+    req.session.save(() => {
+      req.session.viewing_post_id = req.params.id;
+
+      res.status(200).render("dashboardSinglePost", {
+        post,
+        logged_in: true,
+      });
     });
   } catch (err) {
     res.status(500).json({ error: err });
@@ -139,11 +136,11 @@ router.get("/post/:id", async (req, res) => {
 
     req.session.save(() => {
       req.session.viewing_post_id = req.params.id;
-    });
 
-    res.status(200).render("singlePost", {
-      post,
-      logged_in: req.session.logged_in,
+      res.status(200).render("singlePost", {
+        post,
+        logged_in: req.session.logged_in,
+      });
     });
   } catch (err) {
     res.status(500).json({ error: err });
