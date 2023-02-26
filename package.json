@@ -30,6 +30,8 @@
     "nodemon": "^2.0.20",
     "sequelize": "^6.28.0"
   },
-  "engines.node": "18.12.1",
-  "engines.npm": "9.2.0"
+  "engines": {
+    "node": "18.12.1",
+    "npm": "9.2.0"
+  }
 }
